@@ -60,13 +60,13 @@ export const steirerstrom = new Tarif (
 
 export const spotty_direkt = new Tarif (
     "Spotty Direkt",
-    "https://web.archive.org/web/20240212135551/https://static1.squarespace.com/static/5a5381aff9a61ed1f688abc6/t/65c315875cde300de6287a2a/1707283847731/Spotty+Direkt+-+Smart.pdf",
-    "+2.15 ct/kWh<br/>2,40 EUR Grundpreis<br/>inkl. 20% USt.",
-    "+2.15 ct/kWh",
+    "https://www.spottyenergie.at/s/Spotty-Direkt-Smart.pdf",
+    "+1.79 ct/kWh<br/>2,40 EUR Grundpreis<br/>inkl. 20% USt.",
+    "+1.79 ct/kWh",
     240,
     (function (price, kwh, include_monthly_fee, monthly_fee_factor) {
-        // +1.49ct/kWh +0.3ct/kWh (Stromnachweis) exkl. 20% USt.
-        let amount = price.plus(kwh.times(1.49 + 0.3)).times(1.2);
+        // +1.19ct/kWh +0.3ct/kWh (Stromnachweis) exkl. 20% USt.
+        let amount = price.plus(kwh.times(1.19 + 0.3)).times(1.2);
         if (include_monthly_fee) amount = amount.plus(this.grundgebuehr_ct);
         return amount;
     })
